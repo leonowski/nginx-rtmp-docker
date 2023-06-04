@@ -16,7 +16,7 @@ check_ffmpeg_running() {
 nginx -g 'daemon off;' &
 
 # Start ffmpeg with revised command
-ffmpeg -nostats -loglevel 0 -i tcp://${ROS_ROBOT_LOCATION}:5005 -c copy -f flv rtmp://192.168.1.5:1935/live/robot &
+ffmpeg -nostats -loglevel 0 -i tcp://${ROS_ROBOT_LOCATION}:5005 -c copy -f flv rtmp://localhost:1935/live/robot &
 FFMPEG_PID=$!
 
 # check if ffmpeg is still running
